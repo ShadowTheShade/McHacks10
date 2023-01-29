@@ -1,0 +1,17 @@
+{% extends "questions/base.html" %}
+{%load humanize %}
+
+{% block content %}
+    <h2>
+        All Questions
+    </h2>
+    <a href="{% url 'question-create' %}" role="button">
+        ✨ Create New Question
+    </a>
+    {% for question in question_list %}
+    {% ifchanged %}
+        <h3>🗃 {{ question.sets | ordinal }} Pack</h3>
+    {% endifchanged %}
+    {% include "questions/question.html" %}
+    {% endfor %}
+{% endblock content %}

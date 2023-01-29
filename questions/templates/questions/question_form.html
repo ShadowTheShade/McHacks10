@@ -1,0 +1,19 @@
+<!-- Creating new question, django looks for a name_form file -->
+{% extends "questions/base.html" %}
+
+{% block content %}
+    <!--  Depending on whether the card_form receives question data or not, we can edit it or create it -->
+    {% if question %}
+        <h2>✏️ Edit Question</h2>
+    {% else %}
+        <h2>✨ Create New Question</h2>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %} <!-- Cyber security tag to prevent login-attacks and such -->
+        {{ form.as_p }}
+        <input type="submit" value="Save Question">
+    </form>
+    <a href="{% url 'question-list' %}">
+        Cancel
+    </a>
+{% endblock %}

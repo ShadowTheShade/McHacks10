@@ -1,0 +1,12 @@
+{% extends "questions/base.html" %}
+{% load humanize %}
+
+{% block content %}
+    <h2>🗃 {{ set_number | ordinal }} Set</h2>
+    <!-- Pluralize for grammar | length for number of objects belonging to the set of questions -->
+    <mark>{{ object_list | length }}</mark> Question{{ object_list | pluralize }} left in the set.
+    <hr>
+    {% if check_question %}
+        {% include "questions/question.html" with question=check_question %}
+    {% endif %}
+{% endblock content %}

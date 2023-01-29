@@ -1,0 +1,6 @@
+<!-- Loads all of the question tags -->
+{% load question_tags %}
+<nav>
+    <a href="{% url 'question-list' %}">🗂 All Questions</a>
+    {% sets_as_links %}
+</nav>

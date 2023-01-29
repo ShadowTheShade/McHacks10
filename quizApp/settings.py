@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'questions.apps.QuestionsConfig',
+    'django.contrib.humanize',#django template filter
+    'questions.apps.QuestionsConfig',#Personal app
 ]
 
 MIDDLEWARE = [

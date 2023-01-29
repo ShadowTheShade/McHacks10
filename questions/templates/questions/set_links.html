@@ -1,0 +1,7 @@
+{% load humanize %}
+
+{% for set in sets %}
+    <a href="{% url 'set' set_num=set.number %}">
+        🗃 {{ set.number | ordinal }} Set <mark>{{ set.question_count }}</mark>
+    </a>
+{% endfor %}
