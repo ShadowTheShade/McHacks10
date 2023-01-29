@@ -3,6 +3,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+
     path(
         "",
         views.QuestionListView.as_view(),
@@ -23,4 +24,12 @@ urlpatterns = [
         views.SetView.as_view(),
         name="set"
     ),
+    
+    # path('obj-del/<int:id>', 
+    # views.delete_object_function, 
+    # name='obj-del'),
+    
+    path('<pk>/obj-del', 
+    views.QuestionDeleteView.as_view(),
+    name='obj-del'),
 ]

@@ -5,6 +5,10 @@
     <!--  Depending on whether the card_form receives question data or not, we can edit it or create it -->
     {% if question %}
         <h2>✏️ Edit Question</h2>
+        <form action="{% url 'obj-del' question.id %}" method="POST">
+            {% csrf_token %}
+            <input class="btn btn-default btn-danger" type="submit" value="Delete"/>
+        </form> 
     {% else %}
         <h2>✨ Create New Question</h2>
     {% endif %}

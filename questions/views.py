@@ -6,12 +6,15 @@ from django.urls import reverse_lazy #Interacting with the django shell from the
 from django.views.generic import (
     ListView,
     CreateView,
-    UpdateView,)
+    UpdateView,
+    DeleteView,
+    )
 
 from django.shortcuts import get_object_or_404, redirect
 
 from .models import Question
 from .forms import QuestionCheckForm
+
 
 class QuestionListView(ListView):
     model = Question
@@ -20,8 +23,8 @@ class QuestionListView(ListView):
 #Uses django form to create a new question to be added to a pack
 class QuestionCreateView(CreateView):
     model = Question
-    fields = ["question", "answer", "set"]
-    success_url = reverse_lazy("question-create")
+    fields = ["question", "answer", "option1", "option2", "option3", "option4", "set"]#
+    success_url = reverse_lazy("question-list")
 
 class QuestionUpdateView(QuestionCreateView, UpdateView):
     success_url = reverse_lazy("question-list")
@@ -49,3 +52,12 @@ class SetView(QuestionListView):
             question.move(form.cleaned_data["solved"])
 
         return redirect(request.META.get("HTTP_REFERER"))
+
+# def delete_object_function(request, id):
+#     ob = Question.objects.get(id=id)
+#     ob.delete()
+#     return redirect('question-list')
+
+class QuestionDeleteView(DeleteView):
+    model = Question
+    success_url = reverse_lazy("question-list")

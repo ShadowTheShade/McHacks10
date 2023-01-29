@@ -3,8 +3,11 @@
     <input type="hidden" name="card_id" value="{{ card.id }}">
     <input type="hidden" name="solved" value="{{ solved }}">
     {% if solved %}
-        <input type="submit" value="✅ I know"/>
+        <input type="submit" value="{{ option1 }}"/>
+        <input type="submit" value="{{ option2 }}"/>
     {% else %}
-        <input type="submit" value="❌ I don't know"/>
+
+        <input type="submit" value="{{ option3 }}"/>
+        <input type="submit" value="{{ option4 }}"/>    
     {% endif %}
 </form>

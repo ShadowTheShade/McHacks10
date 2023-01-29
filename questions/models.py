@@ -1,12 +1,16 @@
 from django.db import models
 
 # Create your models here.
-NUM_SETS = 5
+NUM_SETS = 1
 SETS = range(1, NUM_SETS + 1)
 
 class Question(models.Model):
     question = models.CharField(max_length=100)
     answer = models.CharField(max_length=100)
+    option1 = models.CharField(max_length=100)
+    option2 = models.CharField(max_length=100)
+    option3 = models.CharField(max_length=100)
+    option4 = models.CharField(max_length=100)
     set = models.IntegerField(
         choices=zip(SETS, SETS),
         default=SETS[0],
