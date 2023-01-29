@@ -1,13 +1,25 @@
+<link rel="stylesheet" href="style.css" >
+<!--<div class="grid">
+    <button id="Option1"> option1 </button>
+    <button id="Option2"> option2 </button>
+    <button id="Option3"> option3 </button>
+    <button id="Option4"> option4 </button> 
+</div>-->
+<script src="button_script.js"></script>
 <form method="post">
     {% csrf_token %}
-    <input type="hidden" name="card_id" value="{{ card.id }}">
-    <input type="hidden" name="solved" value="{{ solved }}">
-    {% if solved %}
-        <input type="submit" value="{{ option1 }}"/>
-        <input type="submit" value="{{ option2 }}"/>
-    {% else %}
-
-        <input type="submit" value="{{ option3 }}"/>
-        <input type="submit" value="{{ option4 }}"/>    
+    <input type="hidden" name="question_id" value="{{ question.id }}">
+    <input type="hidden" name="option" value="{{ option }}">
+    {% if option == 1 %}
+        <input style="width: 100%;" type="submit" value="{{ question.option1 }}"/>
+    {% endif %}
+    {% if option == 2 %}
+        <input style="width: 100%;" type="submit" value="{{ question.option2 }}"/>
+    {% endif %}
+    {% if option == 3 %}
+        <input style="width: 100%;" type="submit" value="{{ question.option3 }}"/>
+    {% endif %}
+    {% if option == 4 %}
+        <input style="width: 100%;" type="submit" class="ans" size="4" value="{{ question.option4 }}"/>
     {% endif %}
 </form>

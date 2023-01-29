@@ -1,0 +1,17 @@
+category,question,a1,a2,a3,a4
+Technology,What does "www" stand for in a website URL?,0world-wide web,world-wide water,world-wide water,world-wide waffle
+Technology,What popular operating system, launched in 1991, also has its own mascot, Tux the penguin?,Windows,0Linux,MacOS,None of the above
+Technology,Which American tech company started with its founders' idea to rent out an air mattress in their San Fransisco living room to travelers hoping to avoid the city's high cost of rent?,0Airbnb,Craigslist,Facebook,Google
+Technology,One gigabyte is equal to how many megabytes?,10,100,01000,10000
+Geography,In which Italian city can you find the Colosseum??,Venice,0Rome,Naples,Milan
+Geography,What is the largest canyon in the world?,Verdon Gorge - France,King’s Canyon - Australia,0Grand Canyon  USA,Fjaðrárgljúfur Canyon - Iceland
+Geography,How long is the border between the United States and Canada?,3525 miles,4525 miles,05525 miles,6525 miles
+Geography,What is the largest active volcano in the world?,Mount Etna,Mount Vesuvius,0Mouna Loa,Mount Batur
+Arts and Literature,When was the book “To Kill a Mockingbird” by Harper Lee published?,1950,01960,1970,1980
+Arts and Literature,In which museum can you find Leonardo Da Vinci’s Mona Lisa?,0Le Louvre,Uffizi Museum,British Museum,Metropolitan Museum of Art
+Arts and Literature,In which city can you find the Prado Museum?,Buenos Aires,Barcelona,Santiago,0Madrid
+Arts and Literature,"In the TV show New Girl, which actress plays Jessica Day?",0Zooey Deschanel,Kaley Cuoco,Jennifer Aniston,Alyson Hannigan
+History,Which French king was nicknamed the “Sun King”?,Louis XVI,Charlemagne,Francis I,0Louis XIV
+History,Who was George W. Bush’ vice president?,Kamala Harris,Joe Biden,0Dick Cheney,Al Gore
+History,Which famous inventor invented the telephone?,Thomas Edison,Benjamin Franklin,0Alexander Graham Bell,Nikola Tesla
+History,When did Lenin die?,021 January 1924,21 January 1934,21 January 1944,21 January 1954

@@ -16,17 +16,17 @@ class Question(models.Model):
         default=SETS[0],
     )
     date_created = models.DateTimeField(auto_now_add=True)
-
     def __str__(self):
         return self.question
 
     def move(self, solved):
-        new_set = self.set + 1 if solved else SETS[0]
-
-        if new_set in SETS:
-            self.set = new_set
-            self.save()
-
-        return self
+        switch={
+            1: self.option1 == self.answer,
+            2: self.option2 == self.answer,
+            3: self.option3 == self.answer,
+            4: self.option4 == self.answer
+        }
+        return switch.get(solved)
+        
 
 

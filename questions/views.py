@@ -1,4 +1,5 @@
 import random;
+import time;
 
 from django.shortcuts import render
 
@@ -20,11 +21,15 @@ class QuestionListView(ListView):
     model = Question
     queryset = Question.objects.all().order_by("set", "-date_created")
 
+
+
 #Uses django form to create a new question to be added to a pack
 class QuestionCreateView(CreateView):
     model = Question
     fields = ["question", "answer", "option1", "option2", "option3", "option4", "set"]#
     success_url = reverse_lazy("question-list")
+    def options(request, option1, option2, option3, option4):
+        return render(request, {'option1': option1, 'option2': option2, 'option3': option3, 'option4': option4,})
 
 class QuestionUpdateView(QuestionCreateView, UpdateView):
     success_url = reverse_lazy("question-list")
@@ -47,11 +52,14 @@ class SetView(QuestionListView):
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
+        result = False #In case the form is invalid
         if form.is_valid():
-            question = get_object_or_404(Question, id=form.cleaned_data["card_id"])
-            question.move(form.cleaned_data["solved"])
-
-        return redirect(request.META.get("HTTP_REFERER"))
+            question = get_object_or_404(Question, id=form.cleaned_data["question_id"])
+            result = question.move(form.cleaned_data["option"])
+        if result:
+            return redirect(request.META.get("HTTP_REFERER"))
+        else:
+            return redirect("question-list")
 
 # def delete_object_function(request, id):
 #     ob = Question.objects.get(id=id)

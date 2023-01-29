@@ -7,12 +7,10 @@
         ✏️ Edit Question
         </a>
     {% else %}
-        <details>
-            <summary>Reveal Answer</summary>
-            <p>{{ question.answer }}</p>
-        </details>
         </hr>
-        {% include "questions/question_check_form.html" with solved=True %}
-        {% include "questions/question_check_form.html" with solved=False %}
+        {% include "questions/question_check_form.html" with option=1 %}
+        {% include "questions/question_check_form.html" with option=2 %}
+        {% include "questions/question_check_form.html" with option=3 %}
+        {% include "questions/question_check_form.html" with option=4 %}
     {% endif %}
  </article>
